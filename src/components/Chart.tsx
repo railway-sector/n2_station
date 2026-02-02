@@ -28,8 +28,7 @@ import {
   zoomToLayer,
 } from "../Query";
 import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-label";
-import { CalciteLabel, CalciteButton } from "@esri/calcite-components-react";
+import { CalciteButton } from "@esri/calcite-components-react";
 import SubLayerView from "@arcgis/core/views/layers/BuildingComponentSublayerView";
 import { ArcgisScene } from "@arcgis/map-components/dist/components/arcgis-scene";
 import { MyContext } from "../contexts/MyContext";
@@ -459,57 +458,63 @@ const Chart = () => {
     <>
       <div
         style={{
-          color: primaryLabelColor,
-          fontSize: "1.3rem",
-          marginLeft: "13px",
-          marginTop: "10px",
-          marginBottom: "-10px",
+          display: "flex",
+          marginTop: "3px",
+          marginLeft: "15px",
+          marginRight: "15px",
+          justifyContent: "space-between",
+          marginBottom: "10px",
         }}
       >
-        Total Progress
-      </div>
-      <CalciteLabel layout="inline">
-        <div
-          style={{
-            color: valueLabelColor,
-            fontSize: "2.5rem",
-            fontWeight: "bold",
-            fontFamily: "calibri",
-            lineHeight: "1.2",
-            marginLeft: "15px",
-          }}
-        >
-          {progress[2]} %
-        </div>
-
         <img
-          src="https://EijiGorilla.github.io/Symbols/Station_Structures_icon.png"
-          alt="Utility Logo"
-          height={"50px"}
-          width={"50px"}
-          style={{ marginLeft: "100px", display: "flex" }}
+          src="https://EijiGorilla.github.io/Symbols/Station_Structures_icon.svg"
+          alt="Station Structure Logo"
+          height={"60px"}
+          width={"60px"}
+          style={{ paddingTop: "20px" }}
         />
-      </CalciteLabel>
-      <div
-        style={{
-          color: valueLabelColor,
-          fontSize: "1rem",
-          fontFamily: "calibri",
-          lineHeight: "1.2",
-          marginLeft: "30px",
-        }}
-      >
-        ({thousands_separators(progress[0])})
+        <dl style={{ alignItems: "center" }}>
+          <dt
+            style={{
+              color: primaryLabelColor,
+              fontSize: "1.2rem",
+              marginRight: "20px",
+            }}
+          >
+            TOTAL PROGRESS
+          </dt>
+          <dd
+            style={{
+              color: valueLabelColor,
+              fontSize: "1.9rem",
+              fontWeight: "bold",
+              fontFamily: "calibri",
+              lineHeight: "1.2",
+              margin: "auto",
+            }}
+          >
+            {progress[2]} %
+          </dd>
+          <div
+            style={{
+              color: valueLabelColor,
+              fontSize: "1rem",
+              fontFamily: "calibri",
+              lineHeight: "1.2",
+            }}
+          >
+            ({thousands_separators(progress[0])})
+          </div>
+        </dl>
       </div>
-
       <div
         id={chartID}
         style={{
           width: "100%",
-          height: "60vh",
+          height: "62vh",
           backgroundColor: "rgb(0,0,0,0)",
           color: "white",
-          marginTop: "5%",
+          marginTop: "3%",
         }}
       ></div>
       <div

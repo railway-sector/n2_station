@@ -1,6 +1,4 @@
-import "@esri/calcite-components/dist/components/calcite-panel";
 import "@esri/calcite-components/dist/calcite/calcite.css";
-import { CalcitePanel } from "@esri/calcite-components-react";
 import "@arcgis/map-components/dist/components/arcgis-scene";
 import "@arcgis/map-components/components/arcgis-scene";
 import { useEffect, useState } from "react";
@@ -22,7 +20,7 @@ function MainChart() {
 
   return (
     <>
-      <CalcitePanel
+      <div
         slot="panel-end"
         // scale="l"
         style={{
@@ -36,7 +34,7 @@ function MainChart() {
         }}
       >
         {buildingLayerLoaded === "loaded" ? <Chart /> : ""}
-      </CalcitePanel>
+      </div>
     </>
   );
 }
