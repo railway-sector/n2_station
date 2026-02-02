@@ -1,0 +1,1 @@
+import{n as t,u as d,eC as h,aC as o,di as l}from"./index-DIOBBi0-.js";const c=s=>{const r=s;let e=class extends r{initialize(){this.addHandles(h(()=>this.layer,"refresh",i=>{this.doRefresh(i.dataChanged).catch(a=>{o(a)||l.getLogger(this).error(a)})}),"RefreshableLayerView")}};return e=t([d("esri.views.layers.RefreshableLayerView")],e),e};export{c as i};
